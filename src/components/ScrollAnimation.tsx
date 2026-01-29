@@ -58,7 +58,7 @@ export function ScrollAnimation({
   once = true,
 }: ScrollAnimationProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: "-100px" });
+  const isInView = useInView(ref, { once, margin: "-20px" });
 
   return (
     <motion.div
@@ -293,24 +293,25 @@ interface ClipRevealProps {
 
 export function ClipReveal({ children, className = "", direction = "left", delay = 0 }: ClipRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  // FIX: Reduced margin from -100px to -20px to make it reveal sooner
+  const isInView = useInView(ref, { once: true, margin: "-20px" });
 
   const clipPaths = {
     left: {
-      hidden: "inset(0 100% 0 0)",
-      visible: "inset(0 0% 0 0)",
+      hidden: "inset(0% 100% 0% 0%)",
+      visible: "inset(0% 0% 0% 0%)",
     },
     right: {
-      hidden: "inset(0 0 0 100%)",
-      visible: "inset(0 0 0 0%)",
+      hidden: "inset(0% 0% 0% 100%)",
+      visible: "inset(0% 0% 0% 0%)",
     },
     top: {
-      hidden: "inset(0 0 100% 0)",
-      visible: "inset(0 0 0% 0)",
+      hidden: "inset(0% 0% 100% 0%)",
+      visible: "inset(0% 0% 0% 0%)",
     },
     bottom: {
-      hidden: "inset(100% 0 0 0)",
-      visible: "inset(0% 0 0 0)",
+      hidden: "inset(100% 0% 0% 0%)",
+      visible: "inset(0% 0% 0% 0%)",
     },
   };
 
@@ -405,4 +406,3 @@ export function GlowPulse({ children, className = "", color = "var(--copper)" }:
     </motion.div>
   );
 }
-

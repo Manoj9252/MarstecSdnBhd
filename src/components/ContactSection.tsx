@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Loader2 } from "lucide-react"; // Added Loader2
 import { toast } from "sonner";
 import { motion } from "framer-motion";
 import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/ScrollAnimation";
 
 export function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false); // Added loading state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,10 +14,43 @@ export function ContactSection() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you for your message! We will get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      // 1. Get a FREE Access Key from web3forms.com for manoj010503@gmail.com
+      // 2. Paste that key below
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "936bdd40-8eff-4dbe-ab8e-7dc53b795fad", 
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          subject: `New Marstec Lead from ${formData.name}`,
+          from_name: "Marstec Website",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Message sent! It will arrive in manoj010503@gmail.com shortly.");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        toast.error("Failed to send. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Something went wrong. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -80,7 +114,7 @@ export function ContactSection() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-primary-foreground mb-1">Email</h4>
-                        <p className="text-primary-foreground/70">Sales.support@marstec.com.my</p>
+                        <p className="text-primary-foreground/70">manoj010503@gmail.com</p>
                       </div>
                     </div>
                   </StaggerItem>
@@ -144,6 +178,7 @@ export function ContactSection() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
+                    disabled={isSubmitting}
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-copper focus:border-transparent transition-all"
                     placeholder="Your name"
                   />
@@ -162,6 +197,7 @@ export function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
+                      disabled={isSubmitting}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-copper focus:border-transparent transition-all"
                       placeholder="your@email.com"
                     />
@@ -172,6 +208,7 @@ export function ContactSection() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      disabled={isSubmitting}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-copper focus:border-transparent transition-all"
                       placeholder="+60 12-345 6789"
                     />
@@ -188,6 +225,7 @@ export function ContactSection() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
+                    disabled={isSubmitting}
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-copper focus:border-transparent transition-all resize-none"
                     placeholder="Tell us about your project..."
@@ -199,9 +237,15 @@ export function ContactSection() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.7 }}
                 >
-                  <Button variant="hero" size="lg" className="w-full group">
-                    Send Message
-                    <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <Button variant="hero" size="lg" className="w-full group" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </Button>
                 </motion.div>
               </form>
@@ -212,4 +256,3 @@ export function ContactSection() {
     </section>
   );
 }
-

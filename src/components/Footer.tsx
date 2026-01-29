@@ -11,6 +11,13 @@ export function Footer() {
     }
   };
 
+  // Define your social media links here
+  const socialLinks = [
+    { Icon: Facebook, href: "https://www.facebook.com" },
+    { Icon: Linkedin, href: "https://www.linkedin.com" },
+    { Icon: Instagram, href: "https://www.instagram.com" },
+  ];
+
   return (
     <footer className="bg-navy-dark py-16">
       <div className="container mx-auto px-6">
@@ -43,10 +50,12 @@ export function Footer() {
               of experience in marine engineering and construction services.
             </p>
             <div className="flex gap-4">
-              {[Facebook, Linkedin, Instagram].map((Icon, index) => (
+              {socialLinks.map(({ Icon, href }, index) => (
                 <motion.a
                   key={index}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-copper transition-colors"
@@ -125,4 +134,3 @@ export function Footer() {
     </footer>
   );
 }
-
