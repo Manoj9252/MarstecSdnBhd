@@ -16,7 +16,6 @@ export function Footer() {
   const socialLinks = [
     { Icon: Facebook, href: "https://www.facebook.com" },
     { Icon: Linkedin, href: "https://www.linkedin.com" },
-    { Icon: Instagram, href: "https://www.instagram.com" },
   ];
 
   return (

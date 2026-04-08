@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Clock, Send, Loader2 } from "lucide-react"; // Added Loader2
+import { MapPin, Phone, Mail, Clock, Send, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
 import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/ScrollAnimation";
 
 export function ContactSection() {
-  const [isSubmitting, setIsSubmitting] = useState(false); // Added loading state
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,8 +19,6 @@ export function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      // 1. Get a FREE Access Key from web3forms.com for manoj010503@gmail.com
-      // 2. Paste that key below
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -28,20 +26,20 @@ export function ContactSection() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "936bdd40-8eff-4dbe-ab8e-7dc53b795fad", 
+          access_key: "f70d09a5-6798-4d18-a837-f4db87312036", 
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           message: formData.message,
-          subject: `New Marstec Lead from ${formData.name}`,
-          from_name: "Marstec Website",
+          subject: `New Inquiry from ${formData.name} via Website`,
+          from_name: "Marstec Official Website",
         }),
       });
 
       const result = await response.json();
 
       if (result.success) {
-        toast.success("Message sent! It will arrive in manoj010503@gmail.com shortly.");
+        toast.success("Message sent successfully to Sales Support!");
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
         toast.error("Failed to send. Please try again.");
@@ -67,8 +65,7 @@ export function ContactSection() {
             Contact Us
           </h2>
           <p className="text-primary-foreground/70 max-w-2xl mx-auto">
-            Ready to start your project? Get in touch with us for a free consultation and quote. We&apos;re here to help
-            bring your vision to life.
+            Ready to start your project? Get in touch with our support team for a professional consultation.
           </p>
           <div className="w-24 h-1 bg-copper-gradient mx-auto rounded-full mt-6" />
         </ScrollAnimation>
@@ -114,7 +111,7 @@ export function ContactSection() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-primary-foreground mb-1">Email</h4>
-                        <p className="text-primary-foreground/70">manoj010503@gmail.com</p>
+                        <p className="text-primary-foreground/70">sales.support@marstec.com.my</p>
                       </div>
                     </div>
                   </StaggerItem>
@@ -153,9 +150,6 @@ export function ContactSection() {
                   </p>
                   <p className="text-primary-foreground/70">
                     <span className="text-copper font-medium">MAARSTEC ENTERPRISE:</span> 001453888-H
-                  </p>
-                  <p className="text-primary-foreground/70">
-                    <span className="text-copper font-medium">Paid Up Capital:</span> RM 100,000.00
                   </p>
                 </div>
               </motion.div>
