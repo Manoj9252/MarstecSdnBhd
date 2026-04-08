@@ -1,4 +1,4 @@
-import { Anchor, Wrench, Building2, Truck, Cog, Zap } from "lucide-react";
+import { Anchor, Wrench, Building2, Cog } from "lucide-react";
 import { motion } from "framer-motion";
 import {
   ScrollAnimation,
@@ -29,22 +29,10 @@ const services = [
     color: "from-emerald-500 to-green-500",
   },
   {
-    icon: Truck,
-    title: "Trading & Supply",
-    description: "Equipment trading, material supply, and procurement services for construction projects.",
-    color: "from-purple-500 to-pink-500",
-  },
-  {
     icon: Cog,
-    title: "Mechanical Works",
-    description: "Mechanical installations, equipment maintenance, and repair services.",
-    color: "from-red-500 to-rose-500",
-  },
-  {
-    icon: Zap,
-    title: "Electrical Works",
-    description: "Electrical installations, wiring, and M&E coordination for comprehensive solutions.",
-    color: "from-yellow-500 to-orange-500",
+    title: "Mechanical and Electrical Works",
+    description: "Comprehensive mechanical and electrical installations, equipment maintenance, repair services, wiring, and coordination for integrated technical solutions.",
+    color: "from-red-500 to-orange-500",
   },
 ];
 
@@ -90,7 +78,8 @@ export function ServicesSection() {
           />
         </ScrollAnimation>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Updated grid to lg:grid-cols-2 for a balanced 2x2 layout since there are 4 services now */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -191,4 +180,3 @@ export function ServicesSection() {
     </section>
   );
 }
-
