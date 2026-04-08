@@ -11,6 +11,7 @@
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
+    "types": ["node"],
 
     /* Linting */
     "strict": true,
@@ -20,4 +21,3 @@
   },
   "include": ["vite.config.ts"]
 }
-
