@@ -13,13 +13,13 @@ const services = [
   {
     icon: Anchor,
     title: "Marine Engineering",
-    description: "Floating pontoons, jetty construction, marine piling, and comprehensive maritime solutions.",
+    description: "Floating pontoons, jetty construction, marine piling, and comprehensive maritime solutions, including revetment works, coastal protection systems, and tidal gate installations with check valves and flap gates.",
     color: "from-blue-500 to-cyan-500",
   },
   {
     icon: Wrench,
     title: "Steel Fabrication",
-    description: "Custom steel structures, gangways, brackets, handrails, and hot-dip galvanized components.",
+    description: "Custom steel structures, gangways, brackets, handrails, and hot-dip galvanized components, as well as mechanical platforms, dolly attachments, automotive line fabrication, and industrial soundproof rooms.",
     color: "from-orange-500 to-amber-500",
   },
   {

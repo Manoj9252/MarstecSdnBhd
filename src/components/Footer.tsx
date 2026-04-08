@@ -1,5 +1,6 @@
-import { Anchor, Facebook, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Linkedin, Instagram } from "lucide-react"; // Removed Anchor icon
 import { motion } from "framer-motion";
+import logoImg from "@/assets/logo.png"; // Importing your logo from the assets folder
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -37,9 +38,13 @@ export function Footer() {
               }}
               className="flex items-center gap-3 mb-6"
             >
-              <div className="w-12 h-12 bg-copper-gradient rounded-lg flex items-center justify-center shadow-copper">
-                <Anchor className="w-7 h-7 text-secondary-foreground" />
-              </div>
+              {/* LOGO IMAGE REPLACEMENT */}
+              <img 
+                src={logoImg} 
+                alt="MARSTEC Logo" 
+                className="h-12 w-auto object-contain" 
+              />
+              
               <div>
                 <span className="font-display text-xl font-bold text-primary-foreground tracking-wider">MARSTEC</span>
                 <span className="block text-[10px] text-copper tracking-[0.2em] font-medium -mt-1">SDN BHD</span>
