@@ -2,50 +2,128 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ScrollAnimation, StaggerContainer, StaggerItem, Parallax, ScaleOnScroll } from "@/components/ScrollAnimation";
 
+// IMPORTANT: Replace the placeholder images with your actual paths like: import project1 from "@/assets/projects/your-image.jpg"
 const projects = [
   {
     id: 1,
-    title: "Glenmarie Cove Marina",
-    client: "DRB-HICOM",
-    year: "2024",
-    description: "Fabricate, install new concrete pontoon and marine refurbishment work",
-    image:
-      "https://images.pexels.com/photos/799091/pexels-photo-799091.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    category: "Marina",
+    title: "Dolly Attachments",
+    client: "HICOM Automotive",
+    year: "Recent",
+    description: "Design and fabrication of specialized dolly attachments (2 units/pics).",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80",
+    category: "Automotive",
   },
   {
     id: 2,
-    title: "LKIM Pengerang Jetty",
-    client: "CLM",
-    year: "2020",
-    description: "Steel platform & pontoon fabrication with piling works",
-    image:
-      "https://images.pexels.com/photos/946262/pexels-photo-946262.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    category: "Piling",
+    title: "Brake Testing System Installation",
+    client: "HICOM Automotive (Pekan)",
+    year: "Recent",
+    description: "Installation and commissioning of advanced brake testing systems.",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
+    category: "Automotive",
   },
   {
     id: 3,
-    title: "Steel Fabrication Works",
-    client: "Various Clients",
-    year: "2023",
-    description: "Custom steel fabrication, welding, and HDG components",
-    image:
-      "https://images.pexels.com/photos/327049/pexels-photo-327049.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    category: "Fabrication",
+    title: "Dolly Testing with Equipment",
+    client: "Industrial Partner",
+    year: "Recent",
+    description: "Comprehensive load and safety testing for dolly equipment.",
+    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80",
+    category: "Automotive",
   },
   {
     id: 4,
-    title: "Floating Pontoon System",
-    client: "PMM Sdn Bhd",
-    year: "2018",
-    description: "Concrete pontoon construction and supply for Kota Kinabalu, Sabah",
-    image:
-      "https://images.pexels.com/photos/799092/pexels-photo-799092.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    category: "Pontoon",
+    title: "Marina and Power Pedestal Services",
+    client: "Marina Management",
+    year: "Recent",
+    description: "Technical servicing of marina infrastructure and power distribution units.",
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80",
+    category: "Marine",
+  },
+  {
+    id: 5,
+    title: "Platform and Track Maintenance",
+    client: "HICOM Automotive (Pekan)",
+    year: "Recent",
+    description: "Critical maintenance work for automotive production platforms and tracks.",
+    image: "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80",
+    category: "Automotive",
+  },
+  {
+    id: 6,
+    title: "Tidal Gate Excavation",
+    client: "Glenmarie Cove",
+    year: "2024",
+    description: "Civil works: Excavation of trench and waterways for newly completed tidal gates.",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80",
+    category: "Civil & Coastal",
+  },
+  {
+    id: 7,
+    title: "New Trash Screen Installation",
+    client: "Glenmarie Cove",
+    year: "2024",
+    description: "Installation of comprehensive trash screening systems for tidal gates.",
+    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80",
+    category: "Civil & Coastal",
+  },
+  {
+    id: 8,
+    title: "Epoxy Painting Work",
+    client: "Toll Logistics, Shah Alam",
+    year: "Recent",
+    description: "High-durability epoxy floor coating and painting for logistics facilities.",
+    image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&q=80",
+    category: "Industrial",
+  },
+  {
+    id: 9,
+    title: "Hydrographic Survey Works",
+    client: "Glenmarie Cove",
+    year: "Recent",
+    description: "Detailed underwater survey for revetment and coastal planning.",
+    image: "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?auto=format&fit=crop&q=80",
+    category: "Marine",
+  },
+  {
+    id: 10,
+    title: "Coastal Protection Works",
+    client: "Glenmarie Cove",
+    year: "Recent",
+    description: "Implementation of coastal erosion prevention and protection systems.",
+    image: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&q=80",
+    category: "Civil & Coastal",
+  },
+  {
+    id: 11,
+    title: "Revetment Rectification",
+    client: "Glenmarie Cove",
+    year: "Recent",
+    description: "Specialized repairs and rectification of existing coastal revetments.",
+    image: "https://images.unsplash.com/photo-1495312040526-19961adcd5a9?auto=format&fit=crop&q=80",
+    category: "Civil & Coastal",
+  },
+  {
+    id: 12,
+    title: "Construction of Tidal Gate",
+    client: "Glenmarie Cove",
+    year: "2023",
+    description: "Full-scale construction and civil engineering of modern tidal gate systems.",
+    image: "https://images.unsplash.com/photo-1590487988256-9ed24133863e?auto=format&fit=crop&q=80",
+    category: "Civil & Coastal",
+  },
+  {
+    id: 13,
+    title: "Senangin Floating Jetty",
+    client: "Glenmarie Cove Marina",
+    year: "Recent",
+    description: "Installation of high-grade floating concrete jetty systems.",
+    image: "https://images.unsplash.com/photo-1559139225-421a9384384d?auto=format&fit=crop&q=80",
+    category: "Marine",
   },
 ];
 
-const categories = ["All", "Marina", "Pontoon", "Piling", "Fabrication"];
+const categories = ["All", "Automotive", "Marine", "Civil & Coastal", "Industrial"];
 
 export function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -55,249 +133,77 @@ export function ProjectsSection() {
 
   return (
     <section id="projects" className="py-24 bg-background relative overflow-hidden">
-      <motion.div
-        animate={{ y: [-20, 20, -20] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-40 left-10 w-20 h-20 border border-copper/20 rounded-lg rotate-45"
-      />
-      <motion.div
-        animate={{ y: [20, -20, 20] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-40 right-20 w-32 h-32 border border-navy/10 rounded-full"
-      />
-
       <div className="container mx-auto px-6">
         <ScrollAnimation variant="reveal" className="text-center mb-12">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-copper font-semibold tracking-widest uppercase text-sm block"
-          >
-            Portfolio
-          </motion.span>
+          <span className="text-copper font-semibold tracking-widest uppercase text-sm block">Portfolio</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">Our Projects</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Over 50 projects completed across Malaysia, Singapore, and beyond. From floating pontoons to complete
-            marina constructions.
+            From heavy industrial automotive maintenance to complex marine and coastal engineering.
           </p>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-24 h-1 bg-copper-gradient mx-auto rounded-full mt-6"
-          />
+          <div className="w-24 h-1 bg-copper-gradient mx-auto rounded-full mt-6" />
         </ScrollAnimation>
 
         <ScrollAnimation delay={0.2} className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category, index) => (
-            <motion.button
+          {categories.map((category) => (
+            <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.1, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-6 py-2 rounded-full font-medium text-sm uppercase tracking-wider transition-all relative overflow-hidden ${
+              className={`px-6 py-2 rounded-full font-medium text-sm uppercase tracking-wider transition-all ${
                 activeCategory === category
                   ? "bg-navy text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:bg-copper hover:text-secondary-foreground"
+                  : "bg-muted text-muted-foreground hover:bg-copper hover:text-white"
               }`}
             >
-              {activeCategory === category && (
-                <motion.div
-                  layoutId="activeCategory"
-                  className="absolute inset-0 bg-navy rounded-full -z-10"
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
-              )}
               {category}
-            </motion.button>
+            </button>
           ))}
         </ScrollAnimation>
 
-        <motion.div layout className="grid md:grid-cols-2 gap-8">
+        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, y: 50, rotateY: -10 }}
-                animate={{ opacity: 1, y: 0, rotateY: 0 }}
-                exit={{ opacity: 0, scale: 0.8, rotateY: 10 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                  type: "spring",
-                  stiffness: 100,
-                }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
                 onHoverStart={() => setHoveredProject(project.id)}
                 onHoverEnd={() => setHoveredProject(null)}
                 className="group relative overflow-hidden rounded-2xl shadow-lg bg-card border border-border"
-                style={{ perspective: "1000px" }}
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <motion.img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover"
-                    animate={{
-                      scale: hoveredProject === project.id ? 1.15 : 1,
-                    }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    animate={{ scale: hoveredProject === project.id ? 1.1 : 1 }}
                   />
                 </div>
 
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredProject === project.id ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/60 to-transparent"
-                />
-
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: hoveredProject === project.id ? 1 : 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="absolute top-4 left-4 right-4 h-px bg-copper/50 origin-left"
-                />
-                <motion.div
-                  initial={{ scaleY: 0 }}
-                  animate={{ scaleY: hoveredProject === project.id ? 1 : 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 }}
-                  className="absolute top-4 bottom-4 right-4 w-px bg-copper/50 origin-top"
-                />
-
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{
-                      y: hoveredProject === project.id ? 0 : 10,
-                      opacity: 1,
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="flex items-center gap-3 mb-2"
-                  >
-                    <motion.span
-                      whileHover={{ scale: 1.1 }}
-                      className="px-3 py-1 bg-copper text-secondary-foreground text-xs font-semibold rounded-full uppercase"
-                    >
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="px-3 py-1 bg-copper/10 text-copper text-[10px] font-bold rounded-full uppercase">
                       {project.category}
-                    </motion.span>
-                    <span className="text-primary-foreground/70 text-sm">{project.year}</span>
-                  </motion.div>
-                  <motion.h3
-                    animate={{
-                      y: hoveredProject === project.id ? 0 : 5,
-                    }}
-                    transition={{ duration: 0.3, delay: 0.05 }}
-                    className="font-display text-xl font-bold text-primary-foreground mb-1"
-                  >
+                    </span>
+                    <span className="text-muted-foreground text-xs">{project.year}</span>
+                  </div>
+                  <h3 className="font-display text-lg font-bold text-foreground mb-1">
                     {project.title}
-                  </motion.h3>
-                  <motion.p
-                    animate={{
-                      y: hoveredProject === project.id ? 0 : 5,
-                    }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                    className="text-primary-foreground/70 text-sm mb-1"
-                  >
+                  </h3>
+                  <p className="text-muted-foreground text-sm font-medium mb-2">
                     Client: {project.client}
-                  </motion.p>
-                  <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{
-                      opacity: hoveredProject === project.id ? 1 : 0,
-                      y: hoveredProject === project.id ? 0 : 10,
-                    }}
-                    transition={{ duration: 0.3, delay: 0.15 }}
-                    className="text-primary-foreground/60 text-sm"
-                  >
+                  </p>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
                     {project.description}
-                  </motion.p>
+                  </p>
                 </div>
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
-
-        <Parallax speed={0.1} className="mt-20">
-          <ScaleOnScroll>
-            <h3 className="font-display text-2xl font-bold text-foreground text-center mb-10">
-              Key Project Milestones
-            </h3>
-          </ScaleOnScroll>
-          <div className="relative">
-            <motion.div
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-copper via-navy to-copper -translate-x-1/2 hidden md:block origin-top"
-            />
-
-            <StaggerContainer className="space-y-8" staggerDelay={0.2}>
-              {[
-                { year: "2012", project: "First floating jetty at Glenmarie Cove" },
-                { year: "2016", project: "Singapore SCDF vessel maintenance" },
-                { year: "2020", project: "LKIM Pengerang steel platform & piling" },
-                { year: "2024", project: "Glenmarie Cove Marina refurbishment" },
-              ].map((milestone, index) => (
-                <StaggerItem key={milestone.year}>
-                  <motion.div
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.15 }}
-                    className={`flex items-center gap-6 ${
-                      index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
-                  >
-                    <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                      <motion.div
-                        whileHover={{
-                          scale: 1.05,
-                          boxShadow: "0 20px 40px -15px rgba(0,0,0,0.2)",
-                        }}
-                        className="bg-card p-6 rounded-xl shadow-md border border-border inline-block transition-shadow"
-                      >
-                        <motion.span
-                          initial={{ opacity: 0, scale: 0.5 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.3 + index * 0.1, type: "spring" }}
-                          className="font-display text-2xl font-bold text-copper"
-                        >
-                          {milestone.year}
-                        </motion.span>
-                        <p className="text-muted-foreground mt-1">{milestone.project}</p>
-                      </motion.div>
-                    </div>
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.4 + index * 0.1, type: "spring", stiffness: 200 }}
-                      className="w-4 h-4 bg-copper rounded-full shrink-0 relative z-10 hidden md:block"
-                    >
-                      <motion.div
-                        animate={{ scale: [1, 1.5, 1], opacity: [1, 0, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
-                        className="absolute inset-0 bg-copper rounded-full"
-                      />
-                    </motion.div>
-                    <div className="flex-1 hidden md:block" />
-                  </motion.div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </Parallax>
       </div>
     </section>
   );
 }
-
