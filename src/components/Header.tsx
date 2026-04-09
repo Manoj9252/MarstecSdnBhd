@@ -38,7 +38,7 @@ export function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-navy-dark/95 backdrop-blur-md shadow-lg py-3" : "bg-transparent py-5"
+        isScrolled || isMobileMenuOpen ? "bg-navy-dark shadow-lg py-3" : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
@@ -48,19 +48,19 @@ export function Header() {
             e.preventDefault();
             scrollToSection("home");
           }}
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-2 sm:gap-3 group"
           whileHover={{ scale: 1.02 }}
         >
-          {/* LOGO IMAGE REPLACEMENT */}
+          {/* Responsive logo height */}
           <img 
             src={logoImg} 
             alt="MARSTEC Logo" 
-            className="h-12 w-auto object-contain transition-transform group-hover:scale-110" 
+            className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-110" 
           />
           
-          <div>
-            <span className="font-display text-xl font-bold text-primary-foreground tracking-wider">MARSTEC</span>
-            <span className="block text-[10px] text-copper tracking-[0.2em] font-medium -mt-1">SDN BHD</span>
+          <div className="flex flex-col">
+            <span className="font-display text-lg sm:text-xl font-bold text-primary-foreground tracking-wider leading-tight">MARSTEC</span>
+            <span className="text-[8px] sm:text-[10px] text-copper tracking-[0.2em] font-medium">SDN BHD</span>
           </div>
         </motion.a>
 
@@ -96,24 +96,25 @@ export function Header() {
           </Button>
         </motion.div>
 
+        {/* Mobile Toggle - Z-index higher to stay on top of the menu */}
         <button
-          className="lg:hidden text-primary-foreground p-2"
+          className="lg:hidden text-primary-foreground p-2 z-50 relative"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
       </div>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden absolute top-full left-0 right-0 bg-navy-dark/98 backdrop-blur-md overflow-hidden"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="lg:hidden fixed inset-0 z-40 bg-navy-dark flex flex-col justify-center items-center overflow-hidden"
           >
-            <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
+            <nav className="flex flex-col gap-10 text-center">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.label}
@@ -122,10 +123,10 @@ export function Header() {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: 0.05 * index }}
-                  className="text-lg font-medium text-primary-foreground/80 hover:text-copper transition-colors uppercase tracking-wider py-2 border-b border-primary-foreground/10"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * index }}
+                  className="text-3xl font-display font-bold text-primary-foreground hover:text-copper uppercase tracking-[0.2em] transition-colors"
                 >
                   {item.label}
                 </motion.a>
@@ -133,9 +134,10 @@ export function Header() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
+                transition={{ delay: 0.6 }}
+                className="px-10"
               >
-                <Button variant="hero" size="lg" className="mt-4 w-full" onClick={() => scrollToSection("contact")}>
+                <Button variant="hero" size="xl" className="w-full text-lg py-6" onClick={() => scrollToSection("contact")}>
                   Get Quote
                 </Button>
               </motion.div>

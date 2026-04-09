@@ -29,14 +29,14 @@ export function HeroSection() {
     <section
       ref={sectionRef}
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-0"
     >
       <motion.div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
         style={{ backgroundImage: `url(${HERO_BACKGROUND})`, y: backgroundY }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-dark/90 via-navy-dark/70 to-navy-dark/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-dark/95 via-navy-dark/70 to-navy-dark/95" />
 
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div
@@ -87,12 +87,12 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-5 py-2 mb-8"
+            className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-4 py-1.5 sm:px-5 sm:py-2 mb-6 sm:mb-8"
           >
             <GlowPulse color="hsl(var(--copper))">
               <span className="w-2 h-2 bg-copper rounded-full block" />
             </GlowPulse>
-            <span className="text-sm font-medium text-primary-foreground/90 tracking-wider uppercase">
+            <span className="text-[10px] sm:text-sm font-medium text-primary-foreground/90 tracking-wider uppercase">
               Since 2003 • 20+ Years of Excellence
             </span>
           </motion.div>
@@ -101,7 +101,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.4 }}
-            className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6"
+            className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] mb-6"
           >
             <AnimatedText text="One Stop" delay={0.4} />
             <br />
@@ -116,7 +116,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-10"
+            className="text-base sm:text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-8 sm:mb-10"
           >
             Your trusted partner for marine engineering, floating pontoons, steel fabrication, and comprehensive
             construction services across Malaysia.
@@ -126,21 +126,26 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
           >
             <Magnetic strength={0.2}>
               <Button
                 variant="hero"
-                size="xl"
-                className="group"
+                size="lg"
+                className="w-full sm:w-auto sm:px-10 sm:h-14 group"
                 onClick={() => scrollToSection("contact")}
               >
                 Start Your Project
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Magnetic>
             <Magnetic strength={0.2}>
-              <Button variant="heroOutline" size="xl" onClick={() => scrollToSection("projects")}>
+              <Button 
+                variant="heroOutline" 
+                size="lg" 
+                className="w-full sm:w-auto sm:px-10 sm:h-14"
+                onClick={() => scrollToSection("projects")}
+              >
                 View Our Work
               </Button>
             </Magnetic>
@@ -150,13 +155,13 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 1.6 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16"
           >
             {[
-              { value: "20+", label: "Years Experience" },
-              { value: "50+", label: "Projects Completed" },
-              { value: "100%", label: "Client Satisfaction" },
-              { value: "24/7", label: "Support Available" },
+              { value: "20+", label: "Years Exp" },
+              { value: "50+", label: "Projects" },
+              { value: "100%", label: "Satisfaction" },
+              { value: "24/7", label: "Support" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -171,10 +176,10 @@ export function HeroSection() {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="text-center cursor-default"
               >
-                <div className="font-display text-3xl md:text-4xl font-bold text-copper mb-1">
+                <div className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-copper mb-1">
                   <AnimatedCounter value={stat.value} duration={2} />
                 </div>
-                <div className="text-sm text-primary-foreground/60 uppercase tracking-wider">{stat.label}</div>
+                <div className="text-[10px] sm:text-xs md:text-sm text-primary-foreground/60 uppercase tracking-wider">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -185,7 +190,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 2.2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2"
       >
         <a
           href="#about"
@@ -195,16 +200,15 @@ export function HeroSection() {
             scrollToSection("about");
           }}
         >
-          <span className="text-xs uppercase tracking-widest mb-2">Scroll</span>
+          <span className="text-[10px] uppercase tracking-widest mb-1 sm:mb-2">Scroll</span>
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ChevronDown className="w-5 h-5" />
+            <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />
           </motion.div>
         </a>
       </motion.div>
     </section>
   );
 }
-
