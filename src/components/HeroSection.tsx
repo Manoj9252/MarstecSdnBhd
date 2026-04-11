@@ -4,8 +4,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { AnimatedText, AnimatedCounter, Magnetic, GlowPulse } from "@/components/ScrollAnimation";
 
-const HERO_BACKGROUND =
-  "https://images.pexels.com/photos/799091/pexels-photo-799091.jpeg?auto=compress&cs=tinysrgb&w=1600";
+import marstecBackground from "@/assets/marstec_background.png";
+
+const HERO_BACKGROUND = marstecBackground;
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
