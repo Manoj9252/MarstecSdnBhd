@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/ScrollAnimation";
+import { ScrollAnimation } from "@/components/ScrollAnimation";
 
 // --- IMAGE IMPORTS ---
 import brake1 from "@/assets/brake-testing-system_1.png";
@@ -44,6 +44,13 @@ import elec1 from "@/assets/electrical_1.png";
 import elec2 from "@/assets/electrical_2.png"; 
 import elec3 from "@/assets/electrical_3.png"; 
 
+// SCDF Imports
+import scdf1 from "@/assets/scdf-pontoon_1.png";
+import scdf2 from "@/assets/scdf-pontoon_2.png";
+import scdf3 from "@/assets/scdf-pontoon_3.png";
+import scdf4 from "@/assets/scdf-pontoon_4.png";
+import scdf5 from "@/assets/scdf-pontoon_5.png";
+
 const projects = [
   // AUTOMOTIVE
   { id: 1, title: "Dolly Attachments", client: "HICOM Automotive", year: "Recent", description: "Specialized dolly attachments fabrication.", image: dollyAtt1, category: "Automotive" },
@@ -66,6 +73,11 @@ const projects = [
   { id: 14, title: "Marina Services", client: "Marina Management", year: "Recent", description: "Routine servicing of marina facilities.", image: marina3, category: "Marine" },
   { id: 15, title: "Hydrographic Survey", client: "Glenmarie Cove", year: "Recent", description: "Underwater surveying for coastal planning.", image: hydro1, category: "Marine" },
   { id: 16, title: "Hydrographic Survey", client: "Glenmarie Cove", year: "Recent", description: "Detailed mapping of waterways.", image: hydro2, category: "Marine" },
+  { id: 41, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Installation and commissioning at West Coast Singapore.", image: scdf1, category: "Marine" },
+  { id: 42, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Structural marine pontoon assembly.", image: scdf2, category: "Marine" },
+  { id: 43, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Mooring system and equipment setup.", image: scdf3, category: "Marine" },
+  { id: 44, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Technical commissioning of pontoon systems.", image: scdf4, category: "Marine" },
+  { id: 45, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Final delivery at West Coast Singapore.", image: scdf5, category: "Marine" },
 
   // CIVIL & COASTAL
   { id: 17, title: "Coastal Protection", client: "Glenmarie Cove", year: "Recent", description: "Erosion prevention systems.", image: coastal1, category: "Civil & Coastal" },
@@ -110,7 +122,10 @@ export function ProjectsSection() {
   const handleProjectClick = (category: string) => {
     if (activeCategory === "All") {
       setActiveCategory(category);
-      window.scrollTo({ top: document.getElementById("projects")?.offsetTop ? document.getElementById("projects")!.offsetTop - 100 : 0, behavior: 'smooth' });
+      window.scrollTo({ 
+        top: document.getElementById("projects")?.offsetTop ? document.getElementById("projects")!.offsetTop - 100 : 0, 
+        behavior: 'smooth' 
+      });
     }
   };
 
