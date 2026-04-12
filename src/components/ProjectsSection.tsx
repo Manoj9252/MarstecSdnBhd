@@ -12,8 +12,19 @@ import epoxy2 from "@/assets/epoxy-painting_2.png";
 import epoxy3 from "@/assets/epoxy-painting_3.png";
 import epoxy4 from "@/assets/epoxy-painting_4.png";
 import marina1 from "@/assets/marina-services_1.png";
-import marina2 from "@/assets/marina-services_2.png"; 
-import marina3 from "@/assets/marina-services_3.png"; 
+import marina2 from "@/assets/marina-services_2.png";
+import marina3 from "@/assets/marina-services_3.png";
+import marina4 from "@/assets/marina-services_4.png";
+import marina5 from "@/assets/marina-services_5.png";
+import float1 from "@/assets/marine-floating-silt-curtain_1.png";
+import float2 from "@/assets/marine-floating-silt-curtain_2.png";
+import float3 from "@/assets/marine-floating-silt-curtain_3.png";
+import float4 from "@/assets/marine-floating-silt-curtain_4.png";
+import float5 from "@/assets/marine-floating-silt-curtain_5.png";
+import pedestal1 from "@/assets/marine-utility-pedestals_1 .png";
+import pedestal2 from "@/assets/marine-utility-pedestals_2.png";
+import pedestal3 from "@/assets/marine-utility-pedestals_3.png";
+import pedestal4 from "@/assets/marine-utility-pedestals_4.png";
 import plat1 from "@/assets/platform-maintenance_1.png";
 import plat2 from "@/assets/platform-maintenance_2.png";
 import plat3 from "@/assets/platform-maintenance_3.png";
@@ -31,25 +42,29 @@ import tgConst2 from "@/assets/tidal-gate-construction_2.png";
 import tgConst3 from "@/assets/tidal-gate-construction_3.png";
 import tgConst4 from "@/assets/tidal-gate-construction_4.png";
 import tgConst5 from "@/assets/tidal-gate-construction_5.png";
-import tgConst6 from "@/assets/tidal-gate-construction_6.png";
-import tgConst7 from "@/assets/tidal-gate-construction_7.png";
 import tgExca1 from "@/assets/tidal-gate-excavation_1.png";
 import tgExca2 from "@/assets/tidal-gate-excavation_2.png";
 import tgExca3 from "@/assets/tidal-gate-excavation_3.png";
 import tgExca4 from "@/assets/tidal-gate-excavation_4.png";
 import tgExca5 from "@/assets/tidal-gate-excavation_5.png";
 import tgExca6 from "@/assets/tidal-gate-excavation_6.png";
-import trash1 from "@/assets/trash-screen-installation_1.png";
 import elec1 from "@/assets/electrical_1.png"; 
 import elec2 from "@/assets/electrical_2.png"; 
 import elec3 from "@/assets/electrical_3.png"; 
 
-// SCDF Imports
+// SCDF & New Marine Imports
 import scdf1 from "@/assets/scdf-pontoon_1.png";
 import scdf2 from "@/assets/scdf-pontoon_2.png";
 import scdf3 from "@/assets/scdf-pontoon_3.png";
 import scdf4 from "@/assets/scdf-pontoon_4.png";
 import scdf5 from "@/assets/scdf-pontoon_5.png";
+import jetty1 from "@/assets/fisherman-jetty-ijm-penang_1.png";
+
+// Trash Screen Imports
+import trash1 from "@/assets/trash-screen-installation_1.png";
+import trash2 from "@/assets/trash-screen-installation_2.png";
+import trash3 from "@/assets/trash-screen-installation_3.png";
+import trash4 from "@/assets/trash-screen-installation_4.png";
 
 const projects = [
   // AUTOMOTIVE
@@ -73,11 +88,23 @@ const projects = [
   { id: 14, title: "Marina Services", client: "Marina Management", year: "Recent", description: "Routine servicing of marina facilities.", image: marina3, category: "Marine" },
   { id: 15, title: "Hydrographic Survey", client: "Glenmarie Cove", year: "Recent", description: "Underwater surveying for coastal planning.", image: hydro1, category: "Marine" },
   { id: 16, title: "Hydrographic Survey", client: "Glenmarie Cove", year: "Recent", description: "Detailed mapping of waterways.", image: hydro2, category: "Marine" },
+  { id: 46, title: "Marina Services", client: "Marina Management", year: "Recent", description: "Expanded marina infrastructure servicing.", image: marina4, category: "Marine" },
+  { id: 47, title: "Marina Services", client: "Marina Management", year: "Recent", description: "Additional berth and power pedestal maintenance.", image: marina5, category: "Marine" },
+  { id: 48, title: "Floating Silt Curtain", client: "Marina Management", year: "Recent", description: "Temporary environmental protection barrier installation.", image: float1, category: "Marine" },
+  { id: 49, title: "Floating Silt Curtain", client: "Marina Management", year: "Recent", description: "Deployment of silt curtains for coastal protection.", image: float2, category: "Marine" },
+  { id: 50, title: "Floating Silt Curtain", client: "Marina Management", year: "Recent", description: "Marine sediment control system installation.", image: float3, category: "Marine" },
+  { id: 51, title: "Floating Silt Curtain", client: "Marina Management", year: "Recent", description: "Environmental protection for shoreline works.", image: float4, category: "Marine" },
+  { id: 52, title: "Floating Silt Curtain", client: "Marina Management", year: "Recent", description: "Completed project commissioning and inspection.", image: float5, category: "Marine" },
+  { id: 53, title: "Marine Utility Pedestals", client: "Marina Management", year: "Recent", description: "Electrical pedestal supply and installation.", image: pedestal1, category: "Marine" },
+  { id: 54, title: "Marine Utility Pedestals", client: "Marina Management", year: "Recent", description: "Power distribution pedestal installation.", image: pedestal2, category: "Marine" },
+  { id: 55, title: "Marine Utility Pedestals", client: "Marina Management", year: "Recent", description: "Commissioning of marine utilities at berth locations.", image: pedestal3, category: "Marine" },
+  { id: 56, title: "Marine Utility Pedestals", client: "Marina Management", year: "Recent", description: "Final testing and handover of utility pedestals.", image: pedestal4, category: "Marine" },
   { id: 41, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Installation and commissioning at West Coast Singapore.", image: scdf1, category: "Marine" },
   { id: 42, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Structural marine pontoon assembly.", image: scdf2, category: "Marine" },
   { id: 43, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Mooring system and equipment setup.", image: scdf3, category: "Marine" },
   { id: 44, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Technical commissioning of pontoon systems.", image: scdf4, category: "Marine" },
   { id: 45, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Final delivery at West Coast Singapore.", image: scdf5, category: "Marine" },
+  { id: 58, title: "Fisherman Jetty Construction", client: "IJM Land", year: "Recent", description: "Construction of specialized fishing jetty infrastructure in Penang.", image: jetty1, category: "Marine" },
 
   // CIVIL & COASTAL
   { id: 17, title: "Coastal Protection", client: "Glenmarie Cove", year: "Recent", description: "Erosion prevention systems.", image: coastal1, category: "Civil & Coastal" },
@@ -92,15 +119,16 @@ const projects = [
   { id: 26, title: "Tidal Gate Construction", client: "Glenmarie Cove", year: "2023", description: "Installation of gate mechanisms.", image: tgConst3, category: "Civil & Coastal" },
   { id: 27, title: "Tidal Gate Construction", client: "Glenmarie Cove", year: "2023", description: "Civil engineering phase.", image: tgConst4, category: "Civil & Coastal" },
   { id: 28, title: "Tidal Gate Construction", client: "Glenmarie Cove", year: "2023", description: "Main gate structural assembly.", image: tgConst5, category: "Civil & Coastal" },
-  { id: 29, title: "Tidal Gate Construction", client: "Glenmarie Cove", year: "2023", description: "Concrete reinforcement works.", image: tgConst6, category: "Civil & Coastal" },
-  { id: 30, title: "Tidal Gate Construction", client: "Glenmarie Cove", year: "2023", description: "Final structural checks.", image: tgConst7, category: "Civil & Coastal" },
   { id: 31, title: "Tidal Gate Excavation", client: "Glenmarie Cove", year: "2024", description: "Trench excavation for waterways.", image: tgExca1, category: "Civil & Coastal" },
   { id: 32, title: "Tidal Gate Excavation", client: "Glenmarie Cove", year: "2024", description: "Channeling and site preparation.", image: tgExca2, category: "Civil & Coastal" },
   { id: 33, title: "Tidal Gate Excavation", client: "Glenmarie Cove", year: "2024", description: "Earthworks for water flow control.", image: tgExca3, category: "Civil & Coastal" },
   { id: 34, title: "Tidal Gate Excavation", client: "Glenmarie Cove", year: "2024", description: "Deep trenching for gate infrastructure.", image: tgExca4, category: "Civil & Coastal" },
   { id: 35, title: "Tidal Gate Excavation", client: "Glenmarie Cove", year: "2024", description: "Waterway landscaping phase.", image: tgExca5, category: "Civil & Coastal" },
   { id: 36, title: "Tidal Gate Excavation", client: "Glenmarie Cove", year: "2024", description: "Final excavation clearance.", image: tgExca6, category: "Civil & Coastal" },
-  { id: 37, title: "Trash Screen Installation", client: "Glenmarie Cove", year: "2024", description: "Installation of debris screening for tidal gates.", image: trash1, category: "Civil & Coastal" },
+  { id: 59, title: "Trash Screen Installation", client: "Glenmarie Cove", year: "2024", description: "Debris screening installation for tidal gates.", image: trash1, category: "Civil & Coastal" },
+  { id: 60, title: "Trash Screen Installation", client: "Glenmarie Cove", year: "2024", description: "Debris screening system setup.", image: trash2, category: "Civil & Coastal" },
+  { id: 61, title: "Trash Screen Installation", client: "Glenmarie Cove", year: "2024", description: "Mechanical filtration unit assembly.", image: trash3, category: "Civil & Coastal" },
+  { id: 62, title: "Trash Screen Installation", client: "Glenmarie Cove", year: "2024", description: "Completed trash screen project.", image: trash4, category: "Civil & Coastal" },
 
   // M&E WORKS
   { id: 38, title: "Electrical Works", client: "Industrial Project", year: "Recent", description: "System wiring and electrical installation phase 1.", image: elec1, category: "M&E Works" },
@@ -114,7 +142,6 @@ export function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
-  // LOGIC: If 'All', filter to show only one unique project per title. Otherwise show all in category.
   const filteredProjects = activeCategory === "All" 
     ? projects.filter((v, i, a) => a.findIndex(t => t.title === v.title) === i)
     : projects.filter((p) => p.category === activeCategory);
@@ -162,7 +189,6 @@ export function ProjectsSection() {
         <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => {
-              // Count total images for this project title to show "View All" count
               const imageCount = projects.filter(p => p.title === project.title).length;
               
               return (
