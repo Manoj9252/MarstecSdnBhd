@@ -58,6 +58,23 @@ import scdf2 from "@/assets/scdf-pontoon_2.png";
 import scdf3 from "@/assets/scdf-pontoon_3.png";
 import scdf4 from "@/assets/scdf-pontoon_4.png";
 import scdf5 from "@/assets/scdf-pontoon_5.png";
+import gangwayScdf1 from "@/assets/aluminium-gangway-scdf_1.png";
+import scdfShipment1 from "@/assets/scdf-pontoon-shipment_1.png";
+import pontoonSarawak1 from "@/assets/pontoon-casting-sarawak_1.png";
+import pontoonSarawak2 from "@/assets/pontoon-casting-sarawak_2.png";
+import modularDock1 from "@/assets/modular-floating-dock_1.png";
+import modularDock2 from "@/assets/modular-floating-dock_2.png";
+import modularDock3 from "@/assets/modular-floating-dock_3.png";
+import coastalTumpat1 from "@/assets/coastal-reclamation-tumpat_1.png";
+import coastalTumpat2 from "@/assets/coastal-reclamation-tumpat_2.png";
+import coastalTumpat3 from "@/assets/coastal-reclamation-tumpat_3.png";
+import slabTumpat1 from "@/assets/slab-casting-tumpat_1.png";
+import slabTumpat2 from "@/assets/slab-casting-tumpat_2.png";
+import slabTumpat3 from "@/assets/slab-casting-tumpat_3.png";
+import steelWork1 from "@/assets/steel-structure-work_1.png";
+import steelWork2 from "@/assets/steel-structure-work_2.png";
+import steelWork3 from "@/assets/steel-structure-work_3.png";
+import steelWork4 from "@/assets/steel-structure-work_4.png";
 import jetty1 from "@/assets/fisherman-jetty-ijm-penang_1.png";
 
 // Trash Screen Imports
@@ -104,6 +121,13 @@ const projects = [
   { id: 43, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Mooring system and equipment setup.", image: scdf3, category: "Marine" },
   { id: 44, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Technical commissioning of pontoon systems.", image: scdf4, category: "Marine" },
   { id: 45, title: "SCDF Pontoon Installation", client: "SCDF", year: "Recent", description: "Final delivery at West Coast Singapore.", image: scdf5, category: "Marine" },
+  { id: 57, title: "SCDF Pontoon Shipment", client: "SCDF", year: "Recent", description: "Ready and off for shipment. Large size pontoon.", image: scdfShipment1, category: "Marine" },
+  { id: 63, title: "Aluminium Gangway Shipment", client: "SCDF", year: "Recent", description: "2.2m wide x 26m aluminium gangway shipment to SCDF West Coast Singapore.", image: gangwayScdf1, category: "Marine" },
+  { id: 64, title: "Pontoon Casting", client: "Sarawak River Board", year: "Recent", description: "Pontoon casting for Sarawak river board, supply & install upon completion.", image: pontoonSarawak1, category: "Marine" },
+  { id: 65, title: "Pontoon Casting", client: "Sarawak River Board", year: "Recent", description: "Pontoon casting for Sarawak river board, supply & install upon completion.", image: pontoonSarawak2, category: "Marine" },
+  { id: 66, title: "Modular Floating Dock", client: "Pinang", year: "Recent", description: "Modular floating dock supply & installation at SG. Pinang.", image: modularDock1, category: "Marine" },
+  { id: 67, title: "Modular Floating Dock", client: "Pinang", year: "Recent", description: "Modular floating dock supply & installation at SG. Pinang.", image: modularDock2, category: "Marine" },
+  { id: 68, title: "Modular Floating Dock", client: "Pinang", year: "Recent", description: "Modular floating dock supply & installation at SG. Pinang.", image: modularDock3, category: "Marine" },
   { id: 58, title: "Fisherman Jetty Construction", client: "IJM Land", year: "Recent", description: "Construction of specialized fishing jetty infrastructure in Penang.", image: jetty1, category: "Marine" },
 
   // CIVIL & COASTAL
@@ -120,6 +144,16 @@ const projects = [
   { id: 27, title: "Tidal Gate Construction", client: "Glenmarie Cove", year: "2023", description: "Civil engineering phase.", image: tgConst4, category: "Civil & Coastal" },
   { id: 28, title: "Tidal Gate Construction", client: "Glenmarie Cove", year: "2023", description: "Main gate structural assembly.", image: tgConst5, category: "Civil & Coastal" },
   { id: 31, title: "Tidal Gate Excavation", client: "Glenmarie Cove", year: "2024", description: "Trench excavation for waterways.", image: tgExca1, category: "Civil & Coastal" },
+  { id: 69, title: "Coastal Reclamation", client: "Tumpat Supply Base", year: "Recent", description: "Coastal reclaim and protection at Tumpat Supply Base Kelantan.", image: coastalTumpat1, category: "Civil & Coastal" },
+  { id: 70, title: "Coastal Reclamation", client: "Tumpat Supply Base", year: "Recent", description: "Coastal reclaim and protection at Tumpat Supply Base Kelantan.", image: coastalTumpat2, category: "Civil & Coastal" },
+  { id: 71, title: "Coastal Reclamation", client: "Tumpat Supply Base", year: "Recent", description: "Coastal reclaim and protection at Tumpat Supply Base Kelantan.", image: coastalTumpat3, category: "Civil & Coastal" },
+  { id: 72, title: "Slab Casting", client: "Tumpat Supply Base", year: "Recent", description: "Slab casting at Tumpat supply base. Kelantan.", image: slabTumpat1, category: "Civil & Coastal" },
+  { id: 73, title: "Slab Casting", client: "Tumpat Supply Base", year: "Recent", description: "Slab casting at Tumpat supply base. Kelantan.", image: slabTumpat2, category: "Civil & Coastal" },
+  { id: 74, title: "Slab Casting", client: "Tumpat Supply Base", year: "Recent", description: "Slab casting at Tumpat supply base. Kelantan.", image: slabTumpat3, category: "Civil & Coastal" },
+  { id: 75, title: "Steel Structure Work", client: "Industrial Project", year: "Recent", description: "Steel structure fabrication and installation.", image: steelWork1, category: "Industrial" },
+  { id: 76, title: "Steel Structure Work", client: "Industrial Project", year: "Recent", description: "Steel structure fabrication and installation.", image: steelWork2, category: "Industrial" },
+  { id: 77, title: "Steel Structure Work", client: "Industrial Project", year: "Recent", description: "Steel structure fabrication and installation.", image: steelWork3, category: "Industrial" },
+  { id: 78, title: "Steel Structure Work", client: "Industrial Project", year: "Recent", description: "Steel structure fabrication and installation.", image: steelWork4, category: "Industrial" },
   { id: 32, title: "Tidal Gate Excavation", client: "Glenmarie Cove", year: "2024", description: "Channeling and site preparation.", image: tgExca2, category: "Civil & Coastal" },
   { id: 33, title: "Tidal Gate Excavation", client: "Glenmarie Cove", year: "2024", description: "Earthworks for water flow control.", image: tgExca3, category: "Civil & Coastal" },
   { id: 34, title: "Tidal Gate Excavation", client: "Glenmarie Cove", year: "2024", description: "Deep trenching for gate infrastructure.", image: tgExca4, category: "Civil & Coastal" },

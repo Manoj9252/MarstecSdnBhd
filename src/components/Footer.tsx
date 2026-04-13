@@ -1,6 +1,6 @@
-import { Facebook, Linkedin, Instagram } from "lucide-react"; // Removed Anchor icon
+import { Facebook, Linkedin, Instagram } from "lucide-react"; 
 import { motion } from "framer-motion";
-import logoImg from "@/assets/logo.png"; // Importing your logo from the assets folder
+import logoImg from "@/assets/logo.png"; 
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,12 +11,6 @@ export function Footer() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  // Define your social media links here
-  const socialLinks = [
-    { Icon: Facebook, href: "https://www.facebook.com" },
-    { Icon: Linkedin, href: "https://www.linkedin.com" },
-  ];
 
   return (
     <footer className="bg-navy-dark py-16">
@@ -53,21 +47,6 @@ export function Footer() {
               Your one-stop construction and marine solution provider. Building excellence since 2003 with over 20 years
               of experience in marine engineering and construction services.
             </p>
-            <div className="flex gap-4">
-              {socialLinks.map(({ Icon, href }, index) => (
-                <motion.a
-                  key={index}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-copper transition-colors"
-                >
-                  <Icon className="w-5 h-5 text-primary-foreground" />
-                </motion.a>
-              ))}
-            </div>
           </motion.div>
 
           <motion.div

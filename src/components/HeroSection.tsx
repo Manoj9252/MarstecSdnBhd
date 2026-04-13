@@ -160,7 +160,7 @@ export function HeroSection() {
           >
             {[
               { value: "20+", label: "Years Exp" },
-              { value: "50+", label: "Projects" },
+              { value: "112+", label: "Projects" },
               { value: "100%", label: "Satisfaction" },
               { value: "24/7", label: "Support" },
             ].map((stat, index) => (
