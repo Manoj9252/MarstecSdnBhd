@@ -4,8 +4,6 @@ import { ScrollAnimation } from "@/components/ScrollAnimation";
 
 // --- IMAGE IMPORTS ---
 import brake1 from "@/assets/brake-testing-system_1.png";
-import dollyAtt1 from "@/assets/dolly-attachments_1.png";
-import dollyAtt2 from "@/assets/dolly-attachments_2.png";
 import dollyTest1 from "@/assets/dolly-testing_1.png";
 import epoxy1 from "@/assets/epoxy-painting_1.png";
 import epoxy2 from "@/assets/epoxy-painting_2.png";
@@ -85,8 +83,6 @@ import trash4 from "@/assets/trash-screen-installation_4.png";
 
 const projects = [
   // AUTOMOTIVE
-  { id: 1, title: "Dolly Attachments", client: "HICOM Automotive", year: "Recent", description: "Specialized dolly attachments fabrication.", image: dollyAtt1, category: "Automotive" },
-  { id: 2, title: "Dolly Attachments (Setup)", client: "HICOM Automotive", year: "Recent", description: "On-site installation of dolly units.", image: dollyAtt2, category: "Automotive" },
   { id: 3, title: "Brake Testing System", client: "HICOM Automotive (Pekan)", year: "Recent", description: "Installation and commissioning of testing systems.", image: brake1, category: "Automotive" },
   { id: 4, title: "Dolly Testing", client: "Industrial Partner", year: "Recent", description: "Equipment load testing and verification.", image: dollyTest1, category: "Automotive" },
   { id: 5, title: "Platform Maintenance", client: "HICOM Automotive (Pekan)", year: "Recent", description: "Track and platform structural maintenance.", image: plat1, category: "Automotive" },
