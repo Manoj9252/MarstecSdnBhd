@@ -58,9 +58,9 @@ export function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-muted-foreground leading-relaxed"
               >
-                Founded in 2003 by Mr. Francis Rayappan as Marstec Enterprise, our company 
-                has undertaken many challenging projects and accumulated skills and experiences 
-                in design and build solutions, project management services, building trades 
+                Founded in 2003 as Marstec Enterprise, the company has undertaken many 
+                challenging projects and accumulated extensive skills and experience in 
+                design and build solutions, project management services, building trades, 
                 and related marine engineering works.
               </motion.p>
               <motion.p 
@@ -70,10 +70,10 @@ export function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="text-muted-foreground leading-relaxed"
               >
-                With combined skills from Mr. Davandran M with 16 years of marine experience, 
-                Marstec Sdn Bhd was established in 2022. Today, we take on the role of main 
-                contractor for small to medium-sized projects and perform project management 
-                services to coordinate specialist trades for industrial and commercial projects.
+                With over 16 years of combined marine experience, Marstec Sdn Bhd was 
+                established in 2022. Today, the company takes on the role of main contractor 
+                for small to medium-sized projects and provides project management services 
+                to coordinate specialist trades for industrial and commercial projects.
               </motion.p>
               <motion.p 
                 initial={{ opacity: 0, x: -20 }}

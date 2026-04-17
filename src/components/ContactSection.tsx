@@ -82,13 +82,15 @@ export function ContactSection() {
                         <MapPin className="w-6 h-6 text-copper" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-primary-foreground mb-1">Address</h4>
-                        <p className="text-primary-foreground/70">
-                          Lot 10444-1, Jalan Sg Jati,
-                          <br />
-                          Kg Jawa, Klang, Selangor, Malaysia
-                        </p>
-                      </div>
+                      <h4 className="font-semibold text-primary-foreground mb-1">Address</h4>
+                      <p className="text-primary-foreground/70">
+                        LOT 3457, JLN JATI KANAN, BATU 9 ½
+                        <br />
+                        KAMPUNG PEREPAT, OFF JLN KAPAR 42200 KAPAR
+                        <br />
+                        SELANGOR D.E
+                      </p>
+                    </div>
                     </div>
                   </StaggerItem>
 
